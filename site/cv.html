@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Static CV for Rares P., systems-oriented software engineer.">
+    <title>Rares P. | CV</title>
+    <link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48 64x64" href="assets/favicon.ico?v=3">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png?v=3">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png?v=3">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="stylesheet" href="cv.css">
+  </head>
+  <body>
+    <nav class="cv-actions" aria-label="CV actions">
+      <a href="index.html">← Interactive portfolio</a>
+      <a href="static-cv.md">ATS Markdown</a>
+      <a class="download" href="Rares-P-CV.pdf" download>
+        Download PDF
+        <svg class="download-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M8 2v7m0 0 3-3M8 9 5 6M3 13h10"></path>
+        </svg>
+      </a>
+    </nav>
+
+    <main class="cv-page">
+      <div class="cv-accent-bar" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+      <header class="cv-header">
+        <div>
+          <p class="cv-kicker">Systems / software / security</p>
+          <h1>Rares P.</h1>
+          <p class="cv-title">Systems-Oriented Software Engineer</p>
+        </div>
+        <address>
+          <a href="mailto:smallloopworks@proton.me">smallloopworks@proton.me</a>
+          <a href="https://github.com/RaresKeY">github.com/RaresKeY</a>
+          <a href="https://www.linkedin.com/in/rareskey/">linkedin.com/in/rareskey</a>
+          <a href="https://smallloopworks.itch.io/">smallloopworks.itch.io</a>
+        </address>
+      </header>
+
+      <section class="cv-summary">
+        <h2>Profile</h2>
+        <p>
+          Systems-oriented software engineer and open-source maintainer who turns
+          ambiguous problems into operable systems. Work spans Python services,
+          Linux hosts, rootless containers, application security, applied AI,
+          desktop software, and games. Default rhythm:
+          <strong>spike <span class="flow-arrow" aria-hidden="true">→</span> iterate <span class="flow-arrow" aria-hidden="true">→</span> stabilize</strong>.
+        </p>
+      </section>
+
+      <div class="cv-columns">
+        <div class="cv-primary">
+          <section>
+            <h2>Experience</h2>
+            <article class="cv-entry">
+              <div class="entry-heading">
+                <div>
+                  <h3>Core Maintainer & Security Manager</h3>
+                  <p>Odysseus · open source / volunteer</p>
+                </div>
+                <div class="entry-timing">
+                  <span>Ongoing</span>
+                  <a class="cv-link-icon" href="https://github.com/odysseus-dev/odysseus" target="_blank" rel="noreferrer" aria-label="Open the Odysseus repository">
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                      <path d="M9.5 2.5h4v4m0-4-7 7"></path>
+                      <path d="M12 8.5v3a2 2 0 0 1-2 2H4.5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h3"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <ul>
+                <li>Work across authorization, owner isolation, fail-closed behavior, token scoping, path confinement, model routing, OAuth, CI, and regression coverage.</li>
+                <li>Review high-risk changes by reconstructing invariants across code, state, tests, persistence, and authorization boundaries; reproduce failures and probe the smallest safe fix.</li>
+                <li>Build specifications and review tooling that make security-sensitive work evidence-bound, resumable, and safer to execute.</li>
+              </ul>
+            </article>
+
+            <article class="cv-entry">
+              <div class="entry-heading">
+                <div>
+                  <h3>Independent Software Builder</h3>
+                  <p>Small Loop Works & open-source projects</p>
+                </div>
+                <div class="entry-timing">
+                  <span>Ongoing</span>
+                  <a class="cv-link-icon" href="https://github.com/RaresKeY" target="_blank" rel="noreferrer" aria-label="Open Rares P.'s GitHub profile">
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                      <path d="M9.5 2.5h4v4m0-4-7 7"></path>
+                      <path d="M12 8.5v3a2 2 0 0 1-2 2H4.5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h3"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <ul>
+                <li>Build and release cross-platform desktop, ML, local-agent, native C, and Godot projects from rough prototype through tests, specifications, automation, and public artifacts.</li>
+                <li>Operate supporting Linux hosts, rootless Podman workboxes, SSH/Tailscale access, systemd recovery, cloud GPU experiments, and release flows.</li>
+              </ul>
+            </article>
+          </section>
+
+          <section>
+            <h2>Selected projects</h2>
+            <article class="project-entry">
+              <div class="project-heading">
+                <h3>Review Ops</h3>
+                <span class="project-stack">Python · Podman · Git · security</span>
+              </div>
+              <p>Private resumable review harness: pinned Git ranges, hashed evidence, hostile-input handling, bounded subprocesses, secretless offline probes, and human-controlled publication.</p>
+            </article>
+            <article class="project-entry">
+              <div class="project-heading">
+                <h3>DJ Blue AI</h3>
+                <span class="project-stack">PySide6 · audio · applied AI</span>
+                <a class="cv-link-icon" href="https://dj-blue.com/" target="_blank" rel="noreferrer" aria-label="Open the DJ Blue AI presentation">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <path d="M9.5 2.5h4v4m0-4-7 7"></path>
+                    <path d="M12 8.5v3a2 2 0 0 1-2 2H4.5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h3"></path>
+                  </svg>
+                </a>
+              </div>
+              <p>Cross-platform meeting, playback, transcript, and AI chat application with persistent configuration, component previews, smoke tests, and tagged releases.</p>
+            </article>
+            <article class="project-entry">
+              <div class="project-heading">
+                <h3>Chess Bot</h3>
+                <span class="project-stack">PyTorch · data pipelines · cloud GPU</span>
+                <a class="cv-link-icon" href="https://chess-bot-arena.streamlit.app/" target="_blank" rel="noreferrer" aria-label="Open the hosted Chess Bot arena">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <path d="M9.5 2.5h4v4m0-4-7 7"></path>
+                    <path d="M12 8.5v3a2 2 0 0 1-2 2H4.5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h3"></path>
+                  </svg>
+                </a>
+              </div>
+              <p>Dataset generation and validation, model training, top-k and legality metrics, inference, local play, and RunPod/Vast lifecycle orchestration.</p>
+            </article>
+            <article class="project-entry">
+              <div class="project-heading">
+                <h3>Code Review Simulator</h3>
+                <span class="project-stack">Godot · simulation · release</span>
+                <a class="cv-link-icon" href="https://smallloopworks.itch.io/code-review-simulator" target="_blank" rel="noreferrer" aria-label="Open Code Review Simulator">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <path d="M9.5 2.5h4v4m0-4-7 7"></path>
+                    <path d="M12 8.5v3a2 2 0 0 1-2 2H4.5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h3"></path>
+                  </svg>
+                </a>
+              </div>
+              <p>Playable indie game taken from unusual premise to working core loop, cross-platform builds, public devlogs, and a browser release.</p>
+            </article>
+          </section>
+        </div>
+
+        <aside class="cv-sidebar">
+          <section>
+            <h2>Core stack</h2>
+            <div class="skill-block">
+              <h3>Languages</h3>
+              <p>Python, C/C++, Bash, assembly-like languages</p>
+            </div>
+            <div class="skill-block">
+              <h3>Systems</h3>
+              <p>Linux, Podman, Docker, systemd, SSH, Tailscale, Git, CI/CD, GitHub Actions</p>
+            </div>
+            <div class="skill-block">
+              <h3>AI / data</h3>
+              <p>PyTorch, LangGraph, RAG, Qdrant, NLP, embeddings, model training & evaluation</p>
+            </div>
+            <div class="skill-block">
+              <h3>Apps / native</h3>
+              <p>PySide6, Qt, CMake, SDL2, Godot, SQLite, cross-platform packaging</p>
+            </div>
+            <div class="skill-block">
+              <h3>Practice</h3>
+              <p>Application security, deep code review, automated testing, specifications, technical documentation</p>
+            </div>
+          </section>
+
+          <section class="more-work">
+            <h2>More work</h2>
+            <ul>
+              <li>Local agent tools: LangGraph, Qdrant, llama.cpp</li>
+              <li>Word2Vec Pro Kit: PyTorch, mmap, Safetensors</li>
+              <li>Clean Mines: C, SDL2, CMake</li>
+              <li>4-bit CPU: digital logic & custom ISA exploration</li>
+            </ul>
+          </section>
+
+          <blockquote>
+            <p>“Start in ambiguity; leave behind a working system someone else can understand and continue.”</p>
+          </blockquote>
+        </aside>
+      </div>
+    </main>
+  </body>
+</html>

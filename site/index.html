@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Rares P. | Systems-oriented software engineer, open-source maintainer, security reviewer, applied AI builder, and indie game developer.">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#f5f1e8">
+    <title>Rares P. | Systems, security & strange useful things</title>
+    <link rel="canonical" href="https://rareskey.web.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rareskey.web.app/">
+    <meta property="og:title" content="Rares P. — Systems, Software &amp; Security">
+    <meta property="og:description" content="Systems-oriented software engineer, open-source maintainer, security reviewer, applied AI builder, and indie game developer.">
+    <meta property="og:image" content="https://rareskey.web.app/assets/social-preview.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="627">
+    <meta property="og:image:alt" content="Rares P. — Systems, Software &amp; Security, presented in the portfolio's cream, black, and orange visual style.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rares P. — Systems, Software &amp; Security">
+    <meta name="twitter:description" content="Systems-oriented software engineer, open-source maintainer, security reviewer, applied AI builder, and indie game developer.">
+    <meta name="twitter:image" content="https://rareskey.web.app/assets/social-preview.png">
+    <meta name="twitter:image:alt" content="Rares P. — Systems, Software &amp; Security, presented in the portfolio's cream, black, and orange visual style.">
+    <link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48 64x64" href="assets/favicon.ico?v=3">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png?v=3">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png?v=3">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <script>
+      (() => {
+        const systemTheme = matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+        let themeMode = "system";
+        try {
+          const savedMode = localStorage.getItem("portfolio-theme-mode");
+          if (savedMode === "light" || savedMode === "dark") {
+            themeMode = savedMode;
+          }
+        } catch {
+          // System preference remains the fallback when storage is unavailable.
+        }
+        document.documentElement.dataset.themeMode = themeMode;
+        document.documentElement.dataset.theme =
+          themeMode === "system" ? systemTheme : themeMode;
+        document.querySelector('meta[name="theme-color"]').content =
+          document.documentElement.dataset.theme === "dark"
+            ? "#111318"
+            : "#f5f1e8";
+      })();
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to the work</a>
+
+    <header class="site-header" data-reveal>
+      <a class="wordmark" href="#top" aria-label="Rares P., home">
+        <span class="wordmark-mark" aria-hidden="true">R/P</span>
+        <span class="wordmark-copy">systems / software</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#work">Work</a>
+        <a href="#method">Method</a>
+        <a href="#about">About</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-button command-trigger" type="button" aria-label="Open quick navigation" title="Quick navigation (Ctrl+K)">
+          <span aria-hidden="true">⌘</span>
+        </button>
+        <button class="icon-button theme-toggle" type="button" aria-label="Switch to dark theme">
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
+        <a class="small-button" href="Rares-P-CV.pdf" download aria-label="Download CV as PDF">
+          <span>CV</span>
+          <svg class="download-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M8 2v7m0 0 3-3M8 9 5 6M3 13h10"></path>
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-copy" data-reveal>
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Open to difficult, useful problems</p>
+          <h1>
+            Give me the messy system.
+            <span>I’ll find the useful path through it.</span>
+          </h1>
+          <p class="hero-intro">
+            I’m a systems-oriented software engineer working across Python, Linux,
+            containers, application security, applied AI, desktop software, and game
+            systems.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-button" href="#work">Trace the evidence <span aria-hidden="true">↘</span></a>
+            <a class="text-link" href="cv.html">Read the static CV <span aria-hidden="true">→</span></a>
+          </div>
+          <dl class="hero-signals" aria-label="Current focus">
+            <div>
+              <dt>current</dt>
+              <dd>
+                <span>Open-source maintainer</span>
+                <span>&amp; security work</span>
+              </dd>
+            </div>
+            <div>
+              <dt>default loop</dt>
+              <dd class="signal-flow">spike → iterate → stabilize</dd>
+            </div>
+            <div>
+              <dt>build bias</dt>
+              <dd>
+                <span>Python for glue</span>
+                <span>C for guts</span>
+              </dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero-visual" data-reveal>
+          <div class="splash" aria-hidden="true"></div>
+          <div class="portrait-shell">
+            <img src="assets/operator-profile.png" alt="Illustrated tired operator holding an orange coffee mug at a computer">
+          </div>
+          <div class="orbit orbit-one" aria-hidden="true"></div>
+          <div class="orbit orbit-two" aria-hidden="true"></div>
+          <div class="status-card status-card-top">
+            <span class="status-label">operator.state</span>
+            <strong>calm under ambiguity</strong>
+          </div>
+          <div class="status-card status-card-bottom">
+            <span class="status-label">coffee</span>
+            <strong>nominal <span aria-hidden="true">●</span></strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="role-strip" aria-label="Professional focus" data-reveal>
+        <p>Core Maintainer</p>
+        <p>Security Manager</p>
+        <p>Applied AI Builder</p>
+        <p>Indie Game Developer</p>
+      </section>
+
+      <section class="section work-section" id="work">
+        <div class="section-heading" data-reveal>
+          <div>
+            <p class="eyebrow">01 / Selected evidence</p>
+            <h2>Claims should leave fingerprints.</h2>
+          </div>
+          <p>
+            Filter the work by the kind of problem you care about. Turn on evidence
+            mode for the ownership and engineering signal behind each project.
+          </p>
+        </div>
+
+        <div class="work-controls" data-reveal>
+          <div class="filter-group" role="group" aria-label="Filter projects">
+            <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="filter-button" type="button" data-filter="systems" aria-pressed="false">Systems</button>
+            <button class="filter-button" type="button" data-filter="security" aria-pressed="false">Security</button>
+            <button class="filter-button" type="button" data-filter="ai" aria-pressed="false">AI / ML</button>
+            <button class="filter-button" type="button" data-filter="native" aria-pressed="false">Native</button>
+            <button class="filter-button" type="button" data-filter="games" aria-pressed="false">Games</button>
+          </div>
+          <button class="evidence-toggle" type="button" aria-pressed="false">
+            <span class="toggle-track" aria-hidden="true"><span></span></span>
+            Evidence mode
+          </button>
+        </div>
+
+        <div class="project-grid" aria-live="polite">
+          <article class="project-card project-card-featured" data-tags="systems security" data-reveal>
+            <div class="project-index">01</div>
+            <div class="project-meta">
+              <span>Open source · ongoing</span>
+              <span>Python / security / CI</span>
+            </div>
+            <h3>Odysseus</h3>
+            <p class="project-lede">
+              Core maintainer and Security Manager work on a self-hosted AI workspace:
+              authorization, owner isolation, fail-closed behavior, path and token
+              boundaries, model routing, OAuth, regression coverage, and CI.
+            </p>
+            <div class="evidence-panel">
+              <p><strong>Owned signal:</strong> reconstruct the invariant, trace it through code, state, tests, and authorization boundaries, reproduce the failure, then probe the smallest safe fix.</p>
+            </div>
+            <div class="tag-row">
+              <span>systems</span><span>security</span><span>maintainer</span>
+            </div>
+            <a class="card-link" href="https://github.com/odysseus-dev/odysseus" target="_blank" rel="noreferrer">View project <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="project-card" data-tags="systems security" data-reveal>
+            <div class="project-index">02</div>
+            <div class="project-meta">
+              <span>Private engineering tool</span>
+              <span>Python / Podman / Git</span>
+            </div>
+            <h3>Review Ops</h3>
+            <p class="project-lede">
+              Resumable review tooling that pins Git ranges, hashes artifacts, treats
+              candidate instructions as hostile data, and confines required execution
+              to secretless, offline probe containers.
+            </p>
+            <div class="evidence-panel">
+              <p><strong>Owned signal:</strong> evidence-bound findings, bounded subprocesses, stale/duplicate guards, immutable probe inputs, and human-controlled publication.</p>
+            </div>
+            <div class="tag-row">
+              <span>trust boundaries</span><span>review systems</span>
+            </div>
+            <span class="card-link card-link-muted">Private / described at system level</span>
+          </article>
+
+          <article class="project-card" data-tags="ai systems" data-reveal>
+            <div class="project-index">03</div>
+            <div class="project-meta">
+              <span>Cross-platform desktop</span>
+              <span>PySide6 / audio / AI</span>
+            </div>
+            <h3>DJ Blue AI</h3>
+            <p class="project-lede">
+              Mood-aware meeting assistance, audio playback, transcript capture, and
+              Gemini-powered chat with persistent configuration, component previews,
+              smoke tests, and tag-triggered releases.
+            </p>
+            <div class="evidence-panel">
+              <p><strong>Owned signal:</strong> brought UI, playback, transcription, configuration, packaging, documentation, and Linux/macOS/Windows release paths into one operable desktop product.</p>
+            </div>
+            <div class="tag-row">
+              <span>desktop</span><span>applied AI</span><span>release</span>
+            </div>
+            <div class="card-actions">
+              <a class="card-link" href="https://dj-blue.com/" target="_blank" rel="noreferrer">View presentation <span aria-hidden="true">↗</span></a>
+              <a class="card-link card-link-secondary" href="https://github.com/RaresKeY/dj-blue-ai" target="_blank" rel="noreferrer">Source <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="project-card" data-tags="ai systems" data-reveal>
+            <div class="project-index">04</div>
+            <div class="project-meta">
+              <span>ML platform</span>
+              <span>PyTorch / RunPod / Vast</span>
+            </div>
+            <h3>Chess Bot</h3>
+            <p class="project-lede">
+              An end-to-end platform for dataset validation, PyTorch training,
+              top-k and legality evaluation, inference, local play, and cloud GPU
+              lifecycle orchestration, with a standalone Streamlit arena for playing
+              against swappable model artifacts.
+            </p>
+            <div class="evidence-panel">
+              <p><strong>Owned signal:</strong> connected data generation, training, evaluation, inference, UI, cloud execution, tests, committed behavior specifications, and a separate CPU demo deployment with draggable-board play.</p>
+            </div>
+            <div class="tag-row">
+              <span>PyTorch</span><span>pipelines</span><span>cloud GPU</span><span>arena</span>
+            </div>
+            <div class="card-actions">
+              <a class="card-link" href="https://chess-bot-arena.streamlit.app/" target="_blank" rel="noreferrer">Open arena <span aria-hidden="true">↗</span></a>
+              <a class="card-link card-link-secondary" href="https://github.com/caffeine-lit/chess-bot-arena" target="_blank" rel="noreferrer">Arena source <span aria-hidden="true">↗</span></a>
+              <a class="card-link card-link-secondary" href="https://github.com/RaresKeY/chess-bot" target="_blank" rel="noreferrer">ML pipeline <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="project-card" data-tags="ai systems" data-reveal>
+            <div class="project-index">05</div>
+            <div class="project-meta">
+              <span>Local-first agents</span>
+              <span>LangGraph / Qdrant / RAG</span>
+            </div>
+            <h3>Local Agent Tools</h3>
+            <p class="project-lede">
+              Tool calling, conditional routing, streaming, checkpoints,
+              Qdrant-backed retrieval, local llama.cpp models, safe knowledge-base
+              operations, and deterministic research flows.
+            </p>
+            <div class="evidence-panel">
+              <p><strong>Owned signal:</strong> explored agent orchestration as an explicit state machine with local models and controlled tool boundaries rather than a chat wrapper.</p>
+            </div>
+            <div class="tag-row">
+              <span>agents</span><span>RAG</span><span>local LLM</span>
+            </div>
+            <a class="card-link" href="https://github.com/RaresKeY/langgraph-pipeline-local-tools" target="_blank" rel="noreferrer">View source <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="project-card" data-tags="native systems" data-reveal>
+            <div class="project-index">06</div>
+            <div class="project-meta">
+              <span>Small native product</span>
+              <span>C / SDL2 / CMake</span>
+            </div>
+            <h3>Clean Mines</h3>
+            <p class="project-lede">
+              A compact Minesweeper implementation for desktop and terminal with a
+              native C core, self-tests, CMake builds, and cross-platform release
+              automation.
+            </p>
+            <div class="evidence-panel">
+              <p><strong>Owned signal:</strong> evidence that the “C for guts” part is real: deliberately small scope, explicit memory/runtime boundaries, and portable builds.</p>
+            </div>
+            <div class="tag-row">
+              <span>C</span><span>SDL2</span><span>portable</span>
+            </div>
+            <a class="card-link" href="https://github.com/RaresKeY/clean-minesweeper-native" target="_blank" rel="noreferrer">View source <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="project-card project-card-wide" data-tags="games systems" data-reveal>
+            <div class="project-index">07</div>
+            <div class="project-meta">
+              <span>Playable game</span>
+              <span>Godot / simulation / releases</span>
+            </div>
+            <h3>Code Review Simulator</h3>
+            <p class="project-lede">
+              A strange idea taken through the entire loop: review pull requests from
+              a physical apartment, cash out, buy upgrades, automate the work, and
+              live with what the automation gets wrong.
+            </p>
+            <div class="evidence-panel">
+              <p><strong>Owned signal:</strong> gameplay systems, diegetic UI, performance work, cross-platform builds, release automation, screenshots, public devlogs, and a playable browser build.</p>
+            </div>
+            <div class="tag-row">
+              <span class="zero-one-tag" aria-label="zero to one">0<span class="tag-arrow" aria-hidden="true">→</span>1</span><span>game systems</span><span>shipping</span>
+            </div>
+            <a class="card-link" href="https://smallloopworks.itch.io/code-review-simulator" target="_blank" rel="noreferrer">Play / view devlog <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section method-section" id="method">
+        <div class="section-heading" data-reveal>
+          <div>
+            <p class="eyebrow">02 / Operating model</p>
+            <h2>Fast first pass. Durable final state.</h2>
+          </div>
+          <p>
+            The speed comes from reducing uncertainty early, not by pretending it
+            does not exist. Pick a phase to inspect the loop.
+          </p>
+        </div>
+
+        <div class="method-layout" data-reveal>
+          <div class="phase-controls" role="tablist" aria-label="Build phases">
+            <button id="phase-tab-spike" class="phase-button is-active" type="button" role="tab" aria-selected="true" aria-controls="phase-panel" data-phase="spike">
+              <span>01</span>
+              <strong>Spike</strong>
+              <small>Find the real constraint</small>
+            </button>
+            <button id="phase-tab-iterate" class="phase-button" type="button" role="tab" aria-selected="false" aria-controls="phase-panel" data-phase="iterate">
+              <span>02</span>
+              <strong>Iterate</strong>
+              <small>Close the useful loop</small>
+            </button>
+            <button id="phase-tab-stabilize" class="phase-button" type="button" role="tab" aria-selected="false" aria-controls="phase-panel" data-phase="stabilize">
+              <span>03</span>
+              <strong>Stabilize</strong>
+              <small>Make it transferable</small>
+            </button>
+            <button id="phase-tab-why" class="phase-button" type="button" role="tab" aria-selected="false" aria-controls="phase-panel" data-phase="why">
+              <span>04</span>
+              <strong>Why <span class="phase-orbit" aria-hidden="true"></span></strong>
+              <small>Build beyond the handoff</small>
+            </button>
+          </div>
+
+          <div class="phase-panel" id="phase-panel" role="tabpanel" aria-labelledby="phase-tab-spike" tabindex="0">
+            <img class="phase-emblem" id="phase-emblem" src="assets/why-33-flag.png" alt="" aria-hidden="true" hidden>
+            <p class="phase-kicker" id="phase-kicker">question / 01</p>
+            <h3 id="phase-title">What is actually unknown?</h3>
+            <p id="phase-copy">
+              Map the system and trust boundaries. Reproduce the risky behavior.
+              Build the smallest probe that can disprove the convenient story.
+            </p>
+            <ul id="phase-list">
+              <li>System map before architecture theatre</li>
+              <li>One thin end-to-end path</li>
+              <li>Evidence captured beside the claim</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section review-section" id="about">
+        <div class="review-card" data-reveal>
+          <div class="review-copy">
+            <p class="eyebrow">03 / Review instinct</p>
+            <h2>I review the invariant, not just the diff.</h2>
+            <p>
+              High-risk changes rarely fail only where the patch is loudest. I trace
+              the intended behavior through code, persistence, authorization,
+              execution boundaries, and regression coverage.
+            </p>
+            <a class="text-link" href="static-cv.md">Read the ATS-friendly version <span aria-hidden="true">→</span></a>
+          </div>
+          <ol class="trace-list">
+            <li><span>01</span><div><strong>Reconstruct</strong><p>State the intended invariant and ownership boundary.</p></div></li>
+            <li><span>02</span><div><strong>Trace</strong><p>Follow code, state, permissions, persistence, and tests.</p></div></li>
+            <li><span>03</span><div><strong>Reproduce</strong><p>Separate the PR regression from an existing defect.</p></div></li>
+            <li><span>04</span><div><strong>Probe</strong><p>Test the smallest safe fix in an isolated lane.</p></div></li>
+          </ol>
+        </div>
+
+        <div class="about-grid">
+          <article class="about-card" data-reveal>
+            <p class="eyebrow">Beyond the headline</p>
+            <h3>The same builder, different surfaces.</h3>
+            <p>
+              A Debian host, a local speech-to-text tool, an ML experiment pipeline,
+              a native desktop app, and a Godot prototype all ask the same question:
+              can someone understand, operate, and continue this after the exciting
+              first pass?
+            </p>
+          </article>
+          <article class="about-card lab-card" data-reveal>
+            <p class="eyebrow">Lab bench</p>
+            <h3>Low-level curiosity, honestly scoped.</h3>
+            <p>
+              Digital logic, a working 4-bit CPU and custom assembly-like instruction
+              set in Turing Complete, plus IC10 automation. Useful proof of curiosity;
+              not presented as professional processor design.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact" data-reveal>
+        <div>
+          <p class="eyebrow">04 / Contact</p>
+          <h2>Bring a problem with edges.</h2>
+          <p>
+            Systems engineering, maintainer tooling, security-sensitive application
+            work, applied AI, or an odd prototype that deserves to become real.
+          </p>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:smallloopworks@proton.me"><span>Email</span><strong>smallloopworks@proton.me</strong></a>
+          <a href="https://github.com/RaresKeY" target="_blank" rel="noreferrer"><span>Code</span><strong>github.com/RaresKeY</strong></a>
+          <a href="https://www.linkedin.com/in/rareskey/" target="_blank" rel="noreferrer"><span>Profile</span><strong>linkedin.com/in/rareskey</strong></a>
+          <a href="https://smallloopworks.itch.io/" target="_blank" rel="noreferrer"><span>Games</span><strong>Small Loop Works</strong></a>
+          <a href="https://small-loop-devlog.web.app/" target="_blank" rel="noreferrer"><span>Devlog</span><strong>Small Loop Works Devlog</strong></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Rares P · <span id="current-year">2026</span></p>
+      <p>Built without a framework. Coffee still required.</p>
+      <a href="#top">
+        Back to top
+        <svg class="top-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M8 14V3m0 0L4.5 6.5M8 3l3.5 3.5"></path>
+        </svg>
+      </a>
+    </footer>
+
+    <dialog class="command-dialog" aria-labelledby="command-title">
+      <div class="command-header">
+        <div>
+          <span class="status-label">quick.nav</span>
+          <h2 id="command-title">Where do you want to go?</h2>
+        </div>
+        <button class="dialog-close" type="button" aria-label="Close quick navigation">Esc</button>
+      </div>
+      <div class="command-links">
+        <a href="#work"><span>01</span> Selected evidence <kbd>W</kbd></a>
+        <a href="#method"><span>02</span> Operating model <kbd>M</kbd></a>
+        <a href="#about"><span>03</span> Review instinct <kbd>A</kbd></a>
+        <a href="#contact"><span>04</span> Contact <kbd>C</kbd></a>
+        <a href="cv.html"><span>↗</span> Static CV <kbd>V</kbd></a>
+      </div>
+      <p class="command-hint">Tip: press <kbd>Ctrl</kbd> + <kbd>K</kbd> from anywhere.</p>
+    </dialog>
+  </body>
+</html>
