@@ -9,6 +9,9 @@ The reviewed static artifact lives in `site/`. The authoring source and private
 working material are maintained separately and are not part of this repository
 or its history.
 
+Pushes to `main` validate the exact public bundle and deploy only `site/`
+through GitHub Pages.
+
 ## Verify
 
 ```bash

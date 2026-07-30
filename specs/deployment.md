@@ -2,9 +2,10 @@
 
 ## Status
 
-The reviewed static portfolio bundle is staged under `site/`. Publication from
-this repository to the account-level GitHub Pages URL is planned but is not yet
-enabled.
+The reviewed static portfolio bundle is staged under `site/`. GitHub Pages is
+configured in Actions mode and `.github/workflows/deploy-pages.yml` validates
+and publishes the bundle to `https://rareskey.github.io/` on pushes to `main`
+or manual dispatch.
 
 ## Public Boundary
 
@@ -18,6 +19,14 @@ enabled.
 - The portfolio's canonical URL remains `https://rareskey.web.app/`; the GitHub
   Pages site is a mirror.
 
+## Deployment
+
+- GitHub Pages is configured with `build_type=workflow`.
+- The build job checks out without persisted Git credentials, runs the public
+  bundle validator, configures Pages, and uploads only `site/`.
+- The deploy job receives only `pages: write` and `id-token: write`.
+- Official GitHub actions are pinned to reviewed commit SHAs.
+
 ## Verification
 
 - `python scripts/check_public_bundle.py`
@@ -27,7 +36,3 @@ enabled.
   size ceiling, no external runtime assets, resolved local HTML references,
   known credential and private-context signatures, the canonical URL, and the
   intentionally public contact address.
-
-## Open Decisions
-
-- GitHub Pages workflow and live account-site deployment.
