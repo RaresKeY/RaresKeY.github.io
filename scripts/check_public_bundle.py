@@ -24,6 +24,7 @@ EXPECTED_FILES = {
     "assets/favicon-32x32.png",
     "assets/favicon-mug.png",
     "assets/favicon.ico",
+    "assets/games/spill-the-divine.png",
     "assets/games/supper-guard.png",
     "assets/games/white-approach.png",
     "assets/games/black-seed-directive.png",
@@ -53,6 +54,7 @@ EXPECTED_FILES = {
 }
 
 ALLOWED_EXTERNAL_IFRAMES = {
+    ("itch.io", "/embed/5062726"),
     ("itch.io", "/embed/5056129"),
     ("itch.io", "/embed/4976010"),
     ("itch.io", "/embed/4858054"),
@@ -65,6 +67,7 @@ ALLOWED_EXTERNAL_IFRAMES = {
     ("itch.io", "/embed/4594815"),
 }
 ALLOWED_GAME_FRAME_SOURCES = {
+    ("itch.io", "/embed-upload/19431982"),
     ("itch.io", "/embed-upload/19415598"),
     ("itch.io", "/embed-upload/19113756"),
     ("itch.io", "/embed-upload/18654676"),

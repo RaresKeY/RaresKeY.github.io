@@ -11,7 +11,7 @@ or manual dispatch.
 
 - The repository and its complete Git history are public.
 - `site/` contains exactly the browser-facing portfolio, games page, CV, PDF,
-  ATS Markdown, artwork including ten game covers, self-hosted fonts, and
+  ATS Markdown, artwork including eleven game covers, self-hosted fonts, and
   `.nojekyll`.
 - Private authoring material and authoring-repository history are not copied
   into this repository.
@@ -36,7 +36,7 @@ or manual dispatch.
 - The bundle checker enforces an exact file allowlist, no symlinks, a 10 MiB
   size ceiling, resolved local HTML references, known credential and
   private-context signatures, the canonical URL, and the intentionally public
-  contact address. Only ten exact HTTPS itch.io project-widget iframe paths
+  contact address. Only eleven exact HTTPS itch.io project-widget iframe paths
   may load externally on `games.html`; all other external runtime assets are
-  rejected. The browser player loads one of nine exact HTTPS itch.io upload
+  rejected. The browser player loads one of ten exact HTTPS itch.io upload
   routes only after an explicit cover click, and unloads it on close.
