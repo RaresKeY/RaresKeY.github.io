@@ -24,6 +24,16 @@ EXPECTED_FILES = {
     "assets/favicon-32x32.png",
     "assets/favicon-mug.png",
     "assets/favicon.ico",
+    "assets/games/supper-guard.png",
+    "assets/games/white-approach.png",
+    "assets/games/black-seed-directive.png",
+    "assets/games/charge-grid.png",
+    "assets/games/charge-knights.png",
+    "assets/games/code-review-simulator.png",
+    "assets/games/horizon-charge.png",
+    "assets/games/incremental-framework.png",
+    "assets/games/plug-prosper.png",
+    "assets/games/the-hollow-signal.png",
     "assets/fonts/OFL.txt",
     "assets/fonts/open-sans-bold.woff",
     "assets/fonts/open-sans-extrabold.woff",
@@ -35,10 +45,35 @@ EXPECTED_FILES = {
     "assets/why-33-flag.png",
     "cv.css",
     "cv.html",
+    "games.html",
     "index.html",
     "script.js",
     "static-cv.md",
     "styles.css",
+}
+
+ALLOWED_EXTERNAL_IFRAMES = {
+    ("itch.io", "/embed/5056129"),
+    ("itch.io", "/embed/4976010"),
+    ("itch.io", "/embed/4858054"),
+    ("itch.io", "/embed/4852602"),
+    ("itch.io", "/embed/4852614"),
+    ("itch.io", "/embed/4852654"),
+    ("itch.io", "/embed/4852636"),
+    ("itch.io", "/embed/4846145"),
+    ("itch.io", "/embed/4621067"),
+    ("itch.io", "/embed/4594815"),
+}
+ALLOWED_GAME_FRAME_SOURCES = {
+    ("itch.io", "/embed-upload/19415598"),
+    ("itch.io", "/embed-upload/19113756"),
+    ("itch.io", "/embed-upload/18654676"),
+    ("itch.io", "/embed-upload/18638138"),
+    ("itch.io", "/embed-upload/18634933"),
+    ("itch.io", "/embed-upload/18635127"),
+    ("itch.io", "/embed-upload/18634180"),
+    ("itch.io", "/embed-upload/18607354"),
+    ("itch.io", "/embed-upload/17612233"),
 }
 
 TEXT_SUFFIXES = {".css", ".html", ".js", ".md", ".txt"}
@@ -68,7 +103,8 @@ class SiteParser(HTMLParser):
         super().__init__()
         self.canonical_links: list[str] = []
         self.local_references: list[str] = []
-        self.external_runtime_assets: list[str] = []
+        self.external_runtime_assets: list[tuple[str, str]] = []
+        self.game_frame_sources: list[str] = []
 
     def handle_starttag(
         self,
@@ -76,6 +112,9 @@ class SiteParser(HTMLParser):
         attrs: list[tuple[str, str | None]],
     ) -> None:
         values = dict(attrs)
+        game_frame_source = values.get("data-game-src")
+        if game_frame_source:
+            self.game_frame_sources.append(game_frame_source)
         if tag == "link" and "canonical" in (values.get("rel") or "").split():
             href = values.get("href")
             if href:
@@ -88,7 +127,7 @@ class SiteParser(HTMLParser):
             parsed = urlparse(reference)
             if parsed.scheme in {"http", "https", "mailto"}:
                 if attribute == "src":
-                    self.external_runtime_assets.append(reference)
+                    self.external_runtime_assets.append((tag, reference))
                 continue
             self.local_references.append(reference)
 
@@ -104,10 +143,30 @@ def relative_files() -> set[str]:
 def validate_html(path: Path) -> list[str]:
     parser = SiteParser()
     parser.feed(path.read_text(encoding="utf-8"))
-    failures = [
-        f"{path.name}: external runtime asset is not allowed: {reference}"
-        for reference in parser.external_runtime_assets
-    ]
+    failures: list[str] = []
+    for tag, reference in parser.external_runtime_assets:
+        parsed = urlparse(reference)
+        if (
+            path.name == "games.html"
+            and tag == "iframe"
+            and parsed.scheme == "https"
+            and (parsed.hostname, parsed.path) in ALLOWED_EXTERNAL_IFRAMES
+        ):
+            continue
+        failures.append(
+            f"{path.name}: external runtime asset is not allowed: {reference}"
+        )
+
+    for reference in parser.game_frame_sources:
+        parsed = urlparse(reference)
+        if (
+            path.name != "games.html"
+            or parsed.scheme != "https"
+            or (parsed.hostname, parsed.path) not in ALLOWED_GAME_FRAME_SOURCES
+        ):
+            failures.append(
+                f"{path.name}: game frame source is not allowed: {reference}"
+            )
 
     for reference in parser.local_references:
         clean_reference = reference.split("#", 1)[0].split("?", 1)[0]
@@ -174,7 +233,7 @@ def main() -> int:
             f"found {sorted(public_emails)!r}"
         )
 
-    for html_name in ("index.html", "cv.html"):
+    for html_name in ("index.html", "games.html", "cv.html"):
         path = SITE / html_name
         if path.is_file():
             failures.extend(validate_html(path))
@@ -189,7 +248,7 @@ def main() -> int:
     print(f"- Files: {len(actual_files)}")
     print(f"- Size: {bundle_size} bytes")
     print("- Symlinks: 0")
-    print("- External runtime assets: 0")
+    print("- External runtime assets: only allowlisted itch.io listings on games.html")
     print("- Local references: resolved")
     print("- Credential and private-context signatures: 0")
     print(f"- Canonical URL: {CANONICAL_URL}")

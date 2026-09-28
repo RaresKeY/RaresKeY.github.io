@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A compact portfolio shelf for games and prototypes from Small Loop Works.">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#f5f1e8">
+    <title>Games | Rares P.</title>
+    <link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48 64x64" href="assets/favicon.ico?v=3">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png?v=3">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png?v=3">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <script>
+      (() => {
+        const systemTheme = matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+        let themeMode = "system";
+        try {
+          const savedMode = localStorage.getItem("portfolio-theme-mode");
+          if (savedMode === "light" || savedMode === "dark") {
+            themeMode = savedMode;
+          }
+        } catch {
+          // System preference remains the fallback when storage is unavailable.
+        }
+        document.documentElement.dataset.themeMode = themeMode;
+        document.documentElement.dataset.theme =
+          themeMode === "system" ? systemTheme : themeMode;
+        document.querySelector('meta[name="theme-color"]').content =
+          document.documentElement.dataset.theme === "dark"
+            ? "#111318"
+            : "#f5f1e8";
+      })();
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body class="games-page">
+    <a class="skip-link" href="#games">Skip to the games</a>
+
+    <header class="games-site-header" data-reveal>
+      <a class="back-to-portfolio" href="index.html">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M13.5 8h-11m0 0L6 4.5M2.5 8 6 11.5"></path>
+        </svg>
+        <span>Back to portfolio</span>
+      </a>
+    </header>
+
+    <main class="games-page-main" id="games">
+      <section class="games-page-hero" data-reveal>
+        <div>
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Games / A separate shelf</p>
+          <h1>Games.</h1>
+          <p class="games-page-tagline">Small loops. Playable worlds.</p>
+        </div>
+        <p class="games-page-intro">
+          A compact shelf of games and prototypes from Small Loop Works. Select a
+          playable cover to launch it here, or follow a title to its itch.io page.
+        </p>
+      </section>
+
+      <section class="game-shelf" aria-label="Game shelf">
+        <div class="game-grid">
+          <article class="game-card" data-reveal>
+            <div class="game-cover-shell">
+              <button class="game-cover game-launch" type="button" data-game-title="Plug &amp; Prosper" data-game-src="https://itch.io/embed-upload/18635127?color=3C3F45" data-game-width="1280" data-game-height="720" data-game-page="https://smallloopworks.itch.io/plug-prosper" aria-label="Play Plug &amp; Prosper here">
+                <img src="assets/games/plug-prosper.png" alt="Plug &amp; Prosper cover art with a smiling plug and a colorful stack of adapters in a cheerful workshop">
+                <span class="game-cover-action"><span aria-hidden="true">▶</span> Play here</span>
+              </button>
+              <a class="game-award-badge" href="https://itch.io/jam/ai-jam-4/results" target="_blank" rel="noreferrer" aria-label="View Plug &amp; Prosper's first-place AI Browser Game Jam 4 result on itch.io" title="View the first-place jam result">
+                <svg class="game-award-trophy" viewBox="0 0 160 160" aria-hidden="true" focusable="false">
+                  <path class="trophy-handle" d="M51 39H29v9c0 21 12 34 31 35M109 39h22v9c0 21-12 34-31 35"></path>
+                  <path class="trophy-cup" d="M47 28h66v26c0 27-14 46-33 46S47 81 47 54V28Z"></path>
+                  <path class="trophy-highlight" d="M59 36h13v20c0 18 4 29 12 38-15-3-25-19-25-40V36Z"></path>
+                  <path class="trophy-star" d="m80 45 4.5 9.1 10.1 1.5-7.3 7.1 1.7 10-9-4.8-9 4.8 1.7-10-7.3-7.1 10.1-1.5L80 45Z"></path>
+                  <path class="trophy-stem" d="M74 96h12v22H74zM61 118h38v12H61zM51 130h58v13H51z"></path>
+                </svg>
+              </a>
+            </div>
+            <h2><a href="https://smallloopworks.itch.io/plug-prosper" target="_blank" rel="noreferrer">Plug &amp; Prosper <span aria-hidden="true">↗</span></a></h2>
+            <p>Winner of AI Browser Game Jam 4 — ranked #1 overall.</p>
+          </article>
+
+          <article class="game-card" data-reveal>
+            <button class="game-cover game-launch" type="button" data-game-title="Supper Guard" data-game-src="https://itch.io/embed-upload/19415598?color=3C3F45" data-game-width="640" data-game-height="382" data-game-page="https://smallloopworks.itch.io/supper-guard" aria-label="Play Supper Guard here">
+              <img src="assets/games/supper-guard.png" alt="Supper Guard cover art showing a pan of corn on an outdoor stove beside an isometric farm">
+              <span class="game-cover-action"><span aria-hidden="true">▶</span> Play here</span>
+            </button>
+            <h2><a href="https://smallloopworks.itch.io/supper-guard" target="_blank" rel="noreferrer">Supper Guard <span aria-hidden="true">↗</span></a></h2>
+            <p>Grow ingredients, cook your defenses, and keep hungry foxes away from the pantry.</p>
+          </article>
+
+          <article class="game-card" data-reveal>
+            <button class="game-cover game-launch" type="button" data-game-title="White Approach" data-game-src="https://itch.io/embed-upload/19113756?color=3C3F45" data-game-width="960" data-game-height="622" data-game-page="https://smallloopworks.itch.io/white-approach" aria-label="Play White Approach here">
+              <img src="assets/games/white-approach.png" alt="White Approach cover art showing a little climber beside a red flag on a snowy mountain ledge">
+              <span class="game-cover-action"><span aria-hidden="true">▶</span> Play here</span>
+            </button>
+            <h2><a href="https://smallloopworks.itch.io/white-approach" target="_blank" rel="noreferrer">White Approach <span aria-hidden="true">↗</span></a></h2>
+            <p>Grapple through fog, deep snow, and dark caves in an in-development mountain adventure.</p>
+          </article>
+
+          <article class="game-card" data-reveal>
+            <button class="game-cover game-launch" type="button" data-game-title="Black Seed Directive" data-game-src="https://itch.io/embed-upload/18654676?color=3C3F45" data-game-width="1152" data-game-height="670" data-game-page="https://smallloopworks.itch.io/black-seed-directive" aria-label="Play Black Seed Directive here">
+              <img src="assets/games/black-seed-directive.png" alt="Black Seed Directive cover art showing a blue seed ship facing a red hostile signal in dark space">
+              <span class="game-cover-action"><span aria-hidden="true">▶</span> Play here</span>
+            </button>
+            <h2><a href="https://smallloopworks.itch.io/black-seed-directive" target="_blank" rel="noreferrer">Black Seed Directive <span aria-hidden="true">↗</span></a></h2>
+            <p>A short exploration and combat prototype: follow faint signals as the damaged AI of the last seed ship.</p>
+          </article>
+
+          <article class="game-card" data-reveal>
+            <button class="game-cover game-launch" type="button" data-game-title="Horizon Charge" data-game-src="https://itch.io/embed-upload/18634180?color=3C3F45" data-game-width="960" data-game-height="562" data-game-page="https://smallloopworks.itch.io/horizon-charge" aria-label="Play Horizon Charge here">
+              <img src="assets/games/horizon-charge.png" alt="Horizon Charge cover art showing a glowing spacecraft racing over a curved planetary track">
+              <span class="game-cover-action"><span aria-hidden="true">▶</span> Play here</span>
+            </button>
+            <h2><a href="https://smallloopworks.itch.io/horizon-charge" target="_blank" rel="noreferrer">Horizon Charge <span aria-hidden="true">↗</span></a></h2>
+            <p>Fly fast enough to stay charged in a precision 3D sprint across a curved planetary world.</p>
+          </article>
+
+          <article class="game-card" data-reveal>
+            <button class="game-cover game-launch" type="button" data-game-title="Charge Grid" data-game-src="https://itch.io/embed-upload/18638138?color=3C3F45" data-game-width="1280" data-game-height="720" data-game-page="https://smallloopworks.itch.io/charge-grid" aria-label="Play Charge Grid here">
+              <img src="assets/games/charge-grid.png" alt="Charge Grid cover art showing an isometric power network with a mine, factory, truck, and transformer station">
+              <span class="game-cover-action"><span aria-hidden="true">▶</span> Play here</span>
+            </button>
+            <h2><a href="https://smallloopworks.itch.io/charge-grid" target="_blank" rel="noreferrer">Charge Grid <span aria-hidden="true">↗</span></a></h2>
+            <p>Crank, route, repair, and automate a four-source power grid across an isometric town.</p>
+          </article>
+
+          <article class="game-card" data-reveal>
+            <button class="game-cover game-launch" type="button" data-game-title="Charge Knights" data-game-src="https://itch.io/embed-upload/18634933?color=3C3F45" data-game-width="1152" data-game-height="648" data-game-page="https://smallloopworks.itch.io/charge-knights" aria-label="Play Charge Knights here">
+              <img src="assets/games/charge-knights.png" alt="Charge Knights cover art showing two storybook medieval warbands charging across a battlefield">
+              <span class="game-cover-action"><span aria-hidden="true">▶</span> Play here</span>
+            </button>
+            <h2><a href="https://smallloopworks.itch.io/charge-knights" target="_blank" rel="noreferrer">Charge Knights <span aria-hidden="true">↗</span></a></h2>
+            <p>Recruit your warband, sound the charge, and survive five waves of storybook medieval combat.</p>
+          </article>
+
+          <article class="game-card" data-reveal>
+            <button class="game-cover game-launch" type="button" data-game-title="The Hollow Signal" data-game-src="https://itch.io/embed-upload/18607354?color=3C3F45" data-game-width="1152" data-game-height="670" data-game-page="https://smallloopworks.itch.io/the-hollow-signal" aria-label="Play The Hollow Signal here">
+              <img src="assets/games/the-hollow-signal.png" alt="The Hollow Signal cover art showing a lone traveler before a glowing mechanical tunnel">
+              <span class="game-cover-action"><span aria-hidden="true">▶</span> Play here</span>
+            </button>
+            <h2><a href="https://smallloopworks.itch.io/the-hollow-signal" target="_blank" rel="noreferrer">The Hollow Signal <span aria-hidden="true">↗</span></a></h2>
+            <p>A Signal-Gouache roguelike deckbuilder.</p>
+          </article>
+
+          <article class="game-card" data-reveal>
+            <a class="game-cover" href="https://smallloopworks.itch.io/code-review-simulator" target="_blank" rel="noreferrer" aria-label="Open Code Review Simulator on itch.io">
+              <img src="assets/games/code-review-simulator.png" alt="Code Review Simulator cover art showing an in-game apartment workspace">
+            </a>
+            <h2><a href="https://smallloopworks.itch.io/code-review-simulator" target="_blank" rel="noreferrer">Code Review Simulator <span aria-hidden="true">↗</span></a></h2>
+            <p>Review pull requests, buy upgrades, and tame risky automation.</p>
+          </article>
+
+          <article class="game-card" data-reveal>
+            <button class="game-cover game-launch" type="button" data-game-title="Incremental Framework" data-game-src="https://itch.io/embed-upload/17612233?color=3C3F45" data-game-width="1280" data-game-height="742" data-game-page="https://smallloopworks.itch.io/incremental-framework" aria-label="Play Incremental Framework here">
+              <img src="assets/games/incremental-framework.png" alt="Incremental Framework cover with bold title lettering on a dark technical grid">
+              <span class="game-cover-action"><span aria-hidden="true">▶</span> Play here</span>
+            </button>
+            <h2><a href="https://smallloopworks.itch.io/incremental-framework" target="_blank" rel="noreferrer">Incremental Framework <span aria-hidden="true">↗</span></a></h2>
+            <p>Short runs, rewards, and incremental upgrades.</p>
+          </article>
+
+        </div>
+
+        <section class="itch-widget-trial" aria-labelledby="itch-widget-title" data-reveal>
+          <div class="itch-widget-lead">
+            <div>
+              <p class="eyebrow">On itch.io / Compact listings</p>
+              <h2 id="itch-widget-title">The compact listing view.</h2>
+              <p>
+                These are itch.io’s compact project widgets. They keep the itch
+                identity and project links visible, but do not launch games inside
+                the widgets.
+              </p>
+            </div>
+            <iframe class="itch-project-widget" frameborder="0" src="https://itch.io/embed/4852636?bg_color=0B1F2C&amp;fg_color=E7F8F5&amp;link_color=57D6D1&amp;border_color=364250" width="552" height="167" loading="lazy" title="Horizon Charge itch.io project widget"><a href="https://smallloopworks.itch.io/horizon-charge">Horizon Charge by Small Loop Works</a></iframe>
+          </div>
+          <div class="itch-widget-grid" aria-label="More compact itch.io game listings">
+            <iframe class="itch-project-widget" frameborder="0" src="https://itch.io/embed/5056129?bg_color=203C20&amp;fg_color=FFF1C7&amp;link_color=F2BC43&amp;border_color=4C6940" width="552" height="167" loading="lazy" title="Supper Guard itch.io project widget"><a href="https://smallloopworks.itch.io/supper-guard">Supper Guard by Small Loop Works</a></iframe>
+            <iframe class="itch-project-widget" frameborder="0" src="https://itch.io/embed/4976010?bg_color=253B4E&amp;fg_color=F5F1E8&amp;link_color=B5D9EE&amp;border_color=5D7D97" width="552" height="167" loading="lazy" title="White Approach itch.io project widget"><a href="https://smallloopworks.itch.io/white-approach">White Approach by Small Loop Works</a></iframe>
+            <iframe class="itch-project-widget" frameborder="0" src="https://itch.io/embed/4858054?bg_color=0B1118&amp;fg_color=E7F8F5&amp;link_color=5BCBF0&amp;border_color=283E50" width="552" height="167" loading="lazy" title="Black Seed Directive itch.io project widget"><a href="https://smallloopworks.itch.io/black-seed-directive">Black Seed Directive by Small Loop Works</a></iframe>
+            <iframe class="itch-project-widget" frameborder="0" src="https://itch.io/embed/4852602?bg_color=14271F&amp;fg_color=FFF1C7&amp;link_color=F2BC43&amp;border_color=355848" width="552" height="167" loading="lazy" title="Charge Grid itch.io project widget"><a href="https://smallloopworks.itch.io/charge-grid">Charge Grid by Small Loop Works</a></iframe>
+            <iframe class="itch-project-widget" frameborder="0" src="https://itch.io/embed/4852614?bg_color=D2BC8F&amp;fg_color=2A2118&amp;link_color=8E3F35&amp;border_color=ddc798" width="552" height="167" loading="lazy" title="Charge Knights itch.io project widget"><a href="https://smallloopworks.itch.io/charge-knights">Charge Knights by Small Loop Works</a></iframe>
+            <iframe class="itch-project-widget" frameborder="0" src="https://itch.io/embed/4852654?bg_color=17243A&amp;fg_color=FFF3D5&amp;link_color=B83E55&amp;border_color=4795c5" width="552" height="167" loading="lazy" title="Plug &amp; Prosper itch.io project widget"><a href="https://smallloopworks.itch.io/plug-prosper">Plug &amp; Prosper by Small Loop Works</a></iframe>
+            <iframe class="itch-project-widget" frameborder="0" src="https://itch.io/embed/4846145?bg_color=171522&amp;fg_color=e8ddc5&amp;link_color=5fbdb8&amp;border_color=3c3a42" width="552" height="167" loading="lazy" title="The Hollow Signal itch.io project widget"><a href="https://smallloopworks.itch.io/the-hollow-signal">The Hollow Signal by Small Loop Works</a></iframe>
+            <iframe class="itch-project-widget" frameborder="0" src="https://itch.io/embed/4621067?bg_color=191D21&amp;fg_color=F0F3F4&amp;link_color=66C6BB&amp;border_color=3e4348" width="552" height="167" loading="lazy" title="Code Review Simulator itch.io project widget"><a href="https://smallloopworks.itch.io/code-review-simulator">Code Review Simulator by Small Loop Works</a></iframe>
+            <iframe class="itch-project-widget" frameborder="0" src="https://itch.io/embed/4594815?bg_color=172326&amp;fg_color=f2efe6&amp;link_color=f5c84c&amp;border_color=3f4547" width="552" height="167" loading="lazy" title="Incremental Framework itch.io project widget"><a href="https://smallloopworks.itch.io/incremental-framework">Incremental Framework by Small Loop Works</a></iframe>
+          </div>
+        </section>
+
+        <div class="games-page-note" data-reveal>
+          <span>Small Loop Works / itch.io</span>
+          <a href="https://smallloopworks.itch.io/" target="_blank" rel="noreferrer">View the full itch profile <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="game-player-dialog" aria-labelledby="game-player-title">
+      <div class="game-player-shell">
+        <div class="game-player-stage">
+          <div class="game-player-panel">
+            <header class="game-player-toolbar">
+              <div>
+                <span class="status-label">playing from itch.io</span>
+                <h2 id="game-player-title">Game</h2>
+              </div>
+              <div class="game-player-actions">
+                <a class="game-player-itch-link" href="https://smallloopworks.itch.io/" target="_blank" rel="noreferrer">Open on itch.io <span aria-hidden="true">↗</span></a>
+                <button class="game-player-icon game-player-fullscreen" type="button" aria-label="Enter fullscreen" title="Enter fullscreen">
+                  <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <path d="M3 7V3h4M11 3h4v4M15 11v4h-4M7 15H3v-4"></path>
+                  </svg>
+                </button>
+                <button class="game-player-icon game-player-close" type="button" aria-label="Close game" title="Close game">
+                  <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false">
+                    <path d="m4 4 10 10M14 4 4 14"></path>
+                  </svg>
+                </button>
+              </div>
+            </header>
+            <div class="game-player-viewport">
+              <iframe class="game-player-frame" title="Embedded game" allow="autoplay; fullscreen; gamepad; cross-origin-isolated" allowfullscreen></iframe>
+            </div>
+          </div>
+          <p class="game-player-hint">Click outside the game or press Esc to close.</p>
+        </div>
+      </div>
+    </dialog>
+
+    <footer class="site-footer">
+      <p>Rares P · <span id="current-year">2026</span></p>
+      <p>Games, experiments, and small loops.</p>
+      <a href="#games">
+        Back to top
+        <svg class="top-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M8 14V3m0 0L4.5 6.5M8 3l3.5 3.5"></path>
+        </svg>
+      </a>
+    </footer>
+  </body>
+</html>

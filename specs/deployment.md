@@ -10,8 +10,9 @@ or manual dispatch.
 ## Public Boundary
 
 - The repository and its complete Git history are public.
-- `site/` contains exactly the browser-facing portfolio, CV, PDF, ATS Markdown,
-  artwork, self-hosted fonts, and `.nojekyll`.
+- `site/` contains exactly the browser-facing portfolio, games page, CV, PDF,
+  ATS Markdown, artwork including ten game covers, self-hosted fonts, and
+  `.nojekyll`.
 - Private authoring material and authoring-repository history are not copied
   into this repository.
 - Repository documentation, specs, checks, and workflows are public repository
@@ -33,6 +34,9 @@ or manual dispatch.
 - `deno check site/script.js`
 - `git diff --check`
 - The bundle checker enforces an exact file allowlist, no symlinks, a 10 MiB
-  size ceiling, no external runtime assets, resolved local HTML references,
-  known credential and private-context signatures, the canonical URL, and the
-  intentionally public contact address.
+  size ceiling, resolved local HTML references, known credential and
+  private-context signatures, the canonical URL, and the intentionally public
+  contact address. Only ten exact HTTPS itch.io project-widget iframe paths
+  may load externally on `games.html`; all other external runtime assets are
+  rejected. The browser player loads one of nine exact HTTPS itch.io upload
+  routes only after an explicit cover click, and unloads it on close.

@@ -12,6 +12,115 @@ const projectCards = [...document.querySelectorAll(".project-card")];
 const filterButtons = [...document.querySelectorAll(".filter-button")];
 const phaseButtons = [...document.querySelectorAll(".phase-button")];
 const phaseEmblem = document.querySelector("#phase-emblem");
+const gameLaunchers = [...document.querySelectorAll(".game-launch")];
+const gamePlayerDialog = document.querySelector(".game-player-dialog");
+const gamePlayerStage = document.querySelector(".game-player-stage");
+const gamePlayerPanel = document.querySelector(".game-player-panel");
+const gamePlayerToolbar = document.querySelector(".game-player-toolbar");
+const gamePlayerViewport = document.querySelector(".game-player-viewport");
+const gamePlayerFrame = document.querySelector(".game-player-frame");
+const gamePlayerTitle = document.querySelector("#game-player-title");
+const gamePlayerItchLink = document.querySelector(".game-player-itch-link");
+const gamePlayerClose = document.querySelector(".game-player-close");
+const gamePlayerFullscreen = document.querySelector(".game-player-fullscreen");
+
+let gameNativeWidth = 0;
+let gameNativeHeight = 0;
+
+function fitGamePlayer() {
+  if (
+    !gamePlayerStage ||
+    !gamePlayerPanel ||
+    !gamePlayerViewport ||
+    !gamePlayerFrame ||
+    !gameNativeWidth ||
+    !gameNativeHeight
+  ) {
+    return;
+  }
+
+  const isFullscreen = document.fullscreenElement === gamePlayerViewport;
+  const stageStyle = window.getComputedStyle(gamePlayerStage);
+  const horizontalPadding =
+    Number.parseFloat(stageStyle.paddingLeft) +
+    Number.parseFloat(stageStyle.paddingRight);
+  const verticalPadding =
+    Number.parseFloat(stageStyle.paddingTop) +
+    Number.parseFloat(stageStyle.paddingBottom);
+  const availableWidth = isFullscreen
+    ? window.innerWidth
+    : gamePlayerStage.clientWidth - horizontalPadding;
+  const availableHeight = isFullscreen
+    ? window.innerHeight
+    : gamePlayerStage.clientHeight -
+      verticalPadding -
+      (gamePlayerToolbar?.offsetHeight ?? 0);
+  const scale = Math.min(
+    availableWidth / gameNativeWidth,
+    availableHeight / gameNativeHeight,
+    1,
+  );
+
+  if (!isFullscreen) {
+    const fittedWidth = Math.floor(gameNativeWidth * scale);
+    const fittedHeight = Math.floor(gameNativeHeight * scale);
+    gamePlayerPanel.style.width = `${fittedWidth}px`;
+    gamePlayerViewport.style.width = `${fittedWidth}px`;
+    gamePlayerViewport.style.height = `${fittedHeight}px`;
+  }
+  gamePlayerFrame.style.width = `${gameNativeWidth}px`;
+  gamePlayerFrame.style.height = `${gameNativeHeight}px`;
+  gamePlayerFrame.style.transform = `scale(${scale})`;
+}
+
+function closeGamePlayer() {
+  if (gamePlayerDialog?.open) gamePlayerDialog.close();
+}
+
+gameLaunchers.forEach((launcher) => {
+  launcher.addEventListener("click", () => {
+    if (!gamePlayerDialog || !gamePlayerFrame || gamePlayerDialog.open) return;
+
+    gameNativeWidth = Number.parseInt(launcher.dataset.gameWidth ?? "0", 10);
+    gameNativeHeight = Number.parseInt(launcher.dataset.gameHeight ?? "0", 10);
+    const gameTitle = launcher.dataset.gameTitle ?? "Game";
+    const gamePage = launcher.dataset.gamePage ?? "https://smallloopworks.itch.io/";
+    const gameSource = launcher.dataset.gameSrc;
+    if (!gameNativeWidth || !gameNativeHeight || !gameSource) return;
+
+    if (gamePlayerTitle) gamePlayerTitle.textContent = gameTitle;
+    if (gamePlayerItchLink) gamePlayerItchLink.href = gamePage;
+    gamePlayerFrame.title = gameTitle;
+    gamePlayerFrame.src = gameSource;
+    document.body.classList.add("game-player-open");
+    gamePlayerDialog.showModal();
+    requestAnimationFrame(fitGamePlayer);
+  });
+});
+
+gamePlayerClose?.addEventListener("click", closeGamePlayer);
+gamePlayerStage?.addEventListener("click", (event) => {
+  const target = event.target;
+  if (!(target instanceof Element) || !target.closest(".game-player-panel")) {
+    closeGamePlayer();
+  }
+});
+gamePlayerDialog?.addEventListener("close", () => {
+  document.body.classList.remove("game-player-open");
+  gamePlayerFrame?.removeAttribute("src");
+});
+gamePlayerFullscreen?.addEventListener("click", async () => {
+  if (!gamePlayerViewport) return;
+  try {
+    await gamePlayerViewport.requestFullscreen();
+  } catch {
+    // The fitted dialog remains usable when fullscreen is unavailable.
+  }
+});
+window.addEventListener("resize", fitGamePlayer);
+document.addEventListener("fullscreenchange", () => {
+  requestAnimationFrame(fitGamePlayer);
+});
 
 const phases = {
   spike: {
@@ -233,6 +342,7 @@ document.addEventListener("keydown", (event) => {
 
   const commandMap = {
     w: "#work",
+    g: "games.html",
     m: "#method",
     a: "#about",
     c: "#contact",
