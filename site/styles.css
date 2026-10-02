@@ -340,8 +340,8 @@ html[data-theme="dark"] .theme-icon::before {
   grid-template-columns: minmax(0, 1.04fr) minmax(25rem, 0.96fr);
   gap: 3.75rem;
   align-items: center;
-  min-height: calc(100vh - 6rem);
-  padding: 6rem 0 4rem;
+  min-height: 42rem;
+  padding: 3.5rem 0 3rem;
 }
 
 .hero-copy {
@@ -360,15 +360,6 @@ html[data-theme="dark"] .theme-icon::before {
   text-transform: uppercase;
 }
 
-.status-dot {
-  display: inline-block;
-  width: 0.55rem;
-  height: 0.55rem;
-  margin-right: 0.55rem;
-  border-radius: 50%;
-  background: var(--green);
-  box-shadow: 0 0 0 5px color-mix(in srgb, var(--green) 16%, transparent);
-}
 
 .hero h1 {
   max-width: 14ch;
@@ -1587,27 +1578,6 @@ body.show-evidence .evidence-panel {
   gap: 0.55rem;
 }
 
-.phase-orbit {
-  display: inline-block;
-  width: 0.5rem;
-  height: 0.5rem;
-  flex: 0 0 auto;
-  border-radius: 50%;
-  background: var(--green);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--green) 16%, transparent);
-  transition: box-shadow 160ms ease, transform 160ms ease;
-}
-
-.phase-button[data-phase="why"].is-active .phase-orbit {
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--green) 20%, transparent);
-}
-
-.phase-button[data-phase="why"]:hover .phase-orbit,
-.phase-button[data-phase="why"]:focus-visible .phase-orbit {
-  box-shadow: 0 0 0 6px color-mix(in srgb, var(--green) 22%, transparent);
-  transform: scale(1.08);
-}
-
 .phase-button small {
   color: var(--muted);
 }
@@ -2343,4 +2313,60 @@ kbd {
     opacity: 1;
     transform: none;
   }
+}
+
+/* Recognition uses the supplied certificate as evidence, with no decorative badge. */
+.certificate-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+  padding-block: 4rem;
+  border-bottom: 1px solid var(--line-strong);
+}
+.certificate-copy h2 {
+  margin: 0 0 1.25rem;
+  max-width: 17ch;
+  font-size: clamp(2rem, 3.8vw, 3.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+.certificate-copy p:not(.eyebrow) {
+  max-width: 45ch;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+.certificate-image, .game-certificate {
+  display: block;
+  color: var(--ink);
+  text-decoration: none;
+}
+.certificate-image img, .game-certificate img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line-strong);
+}
+.certificate-image > span, .game-certificate > span {
+  display: block;
+  padding-block: 0.75rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+}
+.certificate-image:hover > span, .game-certificate:hover > span {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.game-certificate {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.game-certificate img { width: 5rem; flex: 0 0 auto; }
+.game-certificate > span { font-size: 0.68rem; }
+.game-grid { align-items: start; }
+@media (max-width: 700px) {
+  .certificate-showcase { grid-template-columns: 1fr; padding-block: 2.5rem; }
+  .hero { padding-top: 3rem; }
 }
