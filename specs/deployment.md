@@ -12,7 +12,8 @@ or manual dispatch.
 - The repository and its complete Git history are public.
 - `site/` contains exactly the browser-facing portfolio, games page, CV, PDF,
   ATS Markdown, artwork including eleven game covers and the published
-  Micro Jam 064 achievement certificate, self-hosted fonts, and
+  Micro Jam 064 achievement certificate and the dated itch.io top-three
+  results screenshot for Plug & Prosper, self-hosted fonts, and
   `.nojekyll`.
 - Private authoring material and authoring-repository history are not copied
   into this repository.

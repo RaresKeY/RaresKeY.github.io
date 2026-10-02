@@ -49,8 +49,8 @@
             : "#f5f1e8";
       })();
     </script>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20261002-polish2">
+    <script src="script.js?v=20261002-polish2" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to the work</a>
@@ -92,40 +92,19 @@
     <main id="main">
       <section class="hero" id="top">
         <div class="hero-copy" data-reveal>
-          <p class="eyebrow">Open to difficult, useful problems</p>
+          <p class="eyebrow">Rares P. / Software engineer</p>
           <h1>
             Give me the messy system.
             <span>I’ll find the useful path through it.</span>
           </h1>
           <p class="hero-intro">
-            I’m a systems-oriented software engineer working across Python, Linux,
-            containers, application security, applied AI, desktop software, and game
-            systems.
+            I build software for complicated systems: tools people can use,
+            boundaries they can trust, and games worth getting lost in.
           </p>
           <div class="hero-actions">
-            <a class="primary-button" href="#work">Trace the evidence <span aria-hidden="true">↘</span></a>
-            <a class="text-link" href="cv.html">Read the static CV <span aria-hidden="true">→</span></a>
+            <a class="primary-button" href="#work">Explore the work <span aria-hidden="true">↘</span></a>
+            <a class="text-link" href="cv.html">Read the CV <span aria-hidden="true">→</span></a>
           </div>
-          <dl class="hero-signals" aria-label="Current focus">
-            <div>
-              <dt>current</dt>
-              <dd>
-                <span>Open-source maintainer</span>
-                <span>&amp; security work</span>
-              </dd>
-            </div>
-            <div>
-              <dt>default loop</dt>
-              <dd class="signal-flow">spike → iterate → stabilize</dd>
-            </div>
-            <div>
-              <dt>build bias</dt>
-              <dd>
-                <span>Python for glue</span>
-                <span>C for guts</span>
-              </dd>
-            </div>
-          </dl>
         </div>
 
         <div class="hero-visual" data-reveal>
@@ -146,52 +125,21 @@
         </div>
       </section>
 
-      <section class="role-strip" aria-label="Professional focus" data-reveal>
-        <p>Core Maintainer</p>
-        <p>Security Manager</p>
-        <p>Applied AI Builder</p>
-        <p>Indie Game Developer</p>
-      </section>
-
-      <section class="section certificate-showcase" id="certificates" aria-labelledby="certificate-title" data-reveal>
-        <div class="certificate-copy">
-          <p class="eyebrow">Recognition / September 2026</p>
-          <h2 id="certificate-title">A small loop. A first-place finish.</h2>
-          <p>White Approach won first place overall in Micro Jam 064: Mountains! This certificate was awarded to Small Loop Works.</p>
-          <a class="text-link" href="games.html">Explore White Approach &amp; the game shelf <span aria-hidden="true">→</span></a>
-        </div>
-        <a class="certificate-image" href="assets/certificates/micro-jam-064.webp" target="_blank" rel="noreferrer" aria-label="View full-size Micro Jam 064 achievement certificate">
-          <img src="assets/certificates/micro-jam-064.webp" width="1280" height="905" alt="Certificate awarded to Small Loop Works for first place Overall Entry in Micro Jam 064: Mountains!, issued September 2026">
-          <span>View the certificate <span aria-hidden="true">↗</span></span>
-        </a>
-      </section>
-
-      <section class="section games-gateway" id="games" data-reveal>
-        <div class="games-gateway-copy">
-          <p class="eyebrow">Games / Separate page</p>
-          <h2>Playable things deserve their own room.</h2>
-          <p>
-            A compact home for released games and experiments. Browse the current
-            Small Loop Works shelf, then launch playable builds without leaving it.
-          </p>
-          <a class="primary-button" href="games.html">Open the games page <span aria-hidden="true">→</span></a>
-        </div>
-        <div class="games-gateway-covers" aria-hidden="true">
-          <span class="gateway-cover gateway-cover-one"><img src="assets/games/spill-the-divine.png" alt=""></span>
-          <span class="gateway-cover gateway-cover-two"><img src="assets/games/supper-guard.png" alt=""></span>
-          <span class="gateway-cover gateway-cover-three"><img src="assets/games/white-approach.png" alt=""></span>
-        </div>
+      <section class="focus-summary" aria-label="Focus and working approach" data-reveal>
+        <div><p class="eyebrow">Focus</p><p>Systems, security &amp; applied AI.</p><span>Open-source maintenance and independent software.</span></div>
+        <div><p class="eyebrow">Approach</p><p>Spike. Iterate. Stabilize.</p><span>Find the constraint. Build a working path. Make it last.</span></div>
+        <div><p class="eyebrow">Tools</p><p>Python for glue. C for guts.</p><span>Linux underneath. Games on the side.</span></div>
       </section>
 
       <section class="section work-section" id="work">
         <div class="section-heading" data-reveal>
           <div>
-            <p class="eyebrow">01 / Selected evidence</p>
-            <h2>Claims should leave fingerprints.</h2>
+            <p class="eyebrow">01 / Selected work</p>
+            <h2>Built, tested, maintained.</h2>
           </div>
           <p>
-            Filter the work by the kind of problem you care about. Turn on evidence
-            mode for the ownership and engineering signal behind each project.
+            Software across systems, security, AI, and native applications.
+            Filter by area, or show the contribution behind each project.
           </p>
         </div>
 
@@ -206,7 +154,7 @@
           </div>
           <button class="evidence-toggle" type="button" aria-pressed="false">
             <span class="toggle-track" aria-hidden="true"><span></span></span>
-            Evidence mode
+            Show contributions
           </button>
         </div>
 
@@ -219,12 +167,10 @@
             </div>
             <h3>Odysseus</h3>
             <p class="project-lede">
-              Core maintainer and Security Manager work on a self-hosted AI workspace:
-              authorization, owner isolation, fail-closed behavior, path and token
-              boundaries, model routing, OAuth, regression coverage, and CI.
+              Core maintainer and Security Manager on an open-source, self-hosted AI workspace. I work on authorization, isolation, model routing, and the tests that keep those boundaries intact.
             </p>
             <div class="evidence-panel">
-              <p><strong>Owned signal:</strong> reconstruct the invariant, trace it through code, state, tests, and authorization boundaries, reproduce the failure, then probe the smallest safe fix.</p>
+              <p><strong>My contribution:</strong> reconstruct the invariant, trace it through code, state, tests, and authorization boundaries, reproduce the failure, then probe the smallest safe fix.</p>
             </div>
             <div class="tag-row">
               <span>systems</span><span>security</span><span>maintainer</span>
@@ -240,12 +186,10 @@
             </div>
             <h3>Review Ops</h3>
             <p class="project-lede">
-              Resumable review tooling that pins Git ranges, hashes artifacts, treats
-              candidate instructions as hostile data, and confines required execution
-              to secretless, offline probe containers.
+              Private tooling for repeatable code reviews. It pins Git ranges, checks artifacts, and runs probes in offline containers with no secrets.
             </p>
             <div class="evidence-panel">
-              <p><strong>Owned signal:</strong> evidence-bound findings, bounded subprocesses, stale/duplicate guards, immutable probe inputs, and human-controlled publication.</p>
+              <p><strong>My contribution:</strong> evidence-bound findings, bounded subprocesses, stale/duplicate guards, immutable probe inputs, and human-controlled publication.</p>
             </div>
             <div class="tag-row">
               <span>trust boundaries</span><span>review systems</span>
@@ -261,12 +205,10 @@
             </div>
             <h3>DJ Blue AI</h3>
             <p class="project-lede">
-              Mood-aware meeting assistance, audio playback, transcript capture, and
-              Gemini-powered chat with persistent configuration, component previews,
-              smoke tests, and tag-triggered releases.
+              A cross-platform desktop assistant for audio playback, transcripts, and Gemini-powered chat, with persistent settings and automated releases.
             </p>
             <div class="evidence-panel">
-              <p><strong>Owned signal:</strong> brought UI, playback, transcription, configuration, packaging, documentation, and Linux/macOS/Windows release paths into one operable desktop product.</p>
+              <p><strong>My contribution:</strong> brought UI, playback, transcription, configuration, packaging, documentation, and Linux/macOS/Windows release paths into one operable desktop product.</p>
             </div>
             <div class="tag-row">
               <span>desktop</span><span>applied AI</span><span>release</span>
@@ -285,13 +227,10 @@
             </div>
             <h3>Chess Bot</h3>
             <p class="project-lede">
-              An end-to-end platform for dataset validation, PyTorch training,
-              top-k and legality evaluation, inference, local play, and cloud GPU
-              lifecycle orchestration, with a standalone Streamlit arena for playing
-              against swappable model artifacts.
+              A complete chess ML workflow: validate data, train and evaluate models, manage cloud GPUs, and play against them in a standalone arena.
             </p>
             <div class="evidence-panel">
-              <p><strong>Owned signal:</strong> connected data generation, training, evaluation, inference, UI, cloud execution, tests, committed behavior specifications, and a separate CPU demo deployment with draggable-board play.</p>
+              <p><strong>My contribution:</strong> connected data generation, training, evaluation, inference, UI, cloud execution, tests, committed behavior specifications, and a separate CPU demo deployment with draggable-board play.</p>
             </div>
             <div class="tag-row">
               <span>PyTorch</span><span>pipelines</span><span>cloud GPU</span><span>arena</span>
@@ -311,12 +250,10 @@
             </div>
             <h3>Local Agent Tools</h3>
             <p class="project-lede">
-              Tool calling, conditional routing, streaming, checkpoints,
-              Qdrant-backed retrieval, local llama.cpp models, safe knowledge-base
-              operations, and deterministic research flows.
+              Local-model agents with explicit routing, checkpoints, retrieval, and controlled tools. Built with LangGraph, Qdrant, and llama.cpp.
             </p>
             <div class="evidence-panel">
-              <p><strong>Owned signal:</strong> explored agent orchestration as an explicit state machine with local models and controlled tool boundaries rather than a chat wrapper.</p>
+              <p><strong>My contribution:</strong> explored agent orchestration as an explicit state machine with local models and controlled tool boundaries rather than a chat wrapper.</p>
             </div>
             <div class="tag-row">
               <span>agents</span><span>RAG</span><span>local LLM</span>
@@ -332,12 +269,10 @@
             </div>
             <h3>Clean Mines</h3>
             <p class="project-lede">
-              A compact Minesweeper implementation for desktop and terminal with a
-              native C core, self-tests, CMake builds, and cross-platform release
-              automation.
+              Minesweeper for desktop and terminal, built around a compact C core with self-tests, portable builds, and automated releases.
             </p>
             <div class="evidence-panel">
-              <p><strong>Owned signal:</strong> evidence that the “C for guts” part is real: deliberately small scope, explicit memory/runtime boundaries, and portable builds.</p>
+              <p><strong>My contribution:</strong> evidence that the “C for guts” part is real: deliberately small scope, explicit memory/runtime boundaries, and portable builds.</p>
             </div>
             <div class="tag-row">
               <span>C</span><span>SDL2</span><span>portable</span>
@@ -353,12 +288,10 @@
             </div>
             <h3>Code Review Simulator</h3>
             <p class="project-lede">
-              A strange idea taken through the entire loop: review pull requests from
-              a physical apartment, cash out, buy upgrades, automate the work, and
-              live with what the automation gets wrong.
+              Review pull requests from a physical apartment. Earn upgrades, automate the work, and live with what the automation gets wrong. A Godot game taken from prototype to playable release.
             </p>
             <div class="evidence-panel">
-              <p><strong>Owned signal:</strong> gameplay systems, diegetic UI, performance work, cross-platform builds, release automation, screenshots, public devlogs, and a playable browser build.</p>
+              <p><strong>My contribution:</strong> gameplay systems, diegetic UI, performance work, cross-platform builds, release automation, screenshots, public devlogs, and a playable browser build.</p>
             </div>
             <div class="tag-row">
               <span class="zero-one-tag" aria-label="zero to one">0<span class="tag-arrow" aria-hidden="true">→</span>1</span><span>game systems</span><span>shipping</span>
@@ -368,15 +301,32 @@
         </div>
       </section>
 
+      <section class="section games-gateway" id="games" data-reveal>
+        <div class="games-gateway-copy">
+          <p class="eyebrow">Small Loop Works / Games</p>
+          <h2>Small loops. Playable worlds.</h2>
+          <p>
+            Mountain climbs, unlikely coffee, and systems with a mind of their own.
+            Browse the shelf and play in your browser.
+          </p>
+          <a class="primary-button" href="games.html">Explore the games <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="games-gateway-covers" aria-hidden="true">
+          <span class="gateway-cover gateway-cover-one"><img src="assets/games/spill-the-divine.png" alt=""></span>
+          <span class="gateway-cover gateway-cover-two"><img src="assets/games/supper-guard.png" alt=""></span>
+          <span class="gateway-cover gateway-cover-three"><img src="assets/games/white-approach.png" alt=""></span>
+        </div>
+      </section>
+
       <section class="section method-section" id="method">
         <div class="section-heading" data-reveal>
           <div>
-            <p class="eyebrow">02 / Operating model</p>
-            <h2>Fast first pass. Durable final state.</h2>
+            <p class="eyebrow">02 / How I work</p>
+            <h2>Find the constraint. Close the loop.</h2>
           </div>
           <p>
-            The speed comes from reducing uncertainty early, not by pretending it
-            does not exist. Pick a phase to inspect the loop.
+            Start with what is unknown. Test a small working path, then make it
+            dependable. Explore each phase of the process.
           </p>
         </div>
 
@@ -410,12 +360,12 @@
             <h3 id="phase-title">What is actually unknown?</h3>
             <p id="phase-copy">
               Map the system and trust boundaries. Reproduce the risky behavior.
-              Build the smallest probe that can disprove the convenient story.
+              Build a small probe to test the assumption.
             </p>
             <ul id="phase-list">
-              <li>System map before architecture theatre</li>
+              <li>Map the system and its boundaries</li>
               <li>One thin end-to-end path</li>
-              <li>Evidence captured beside the claim</li>
+              <li>Record what the experiment shows</li>
             </ul>
           </div>
         </div>
@@ -424,41 +374,40 @@
       <section class="section review-section" id="about">
         <div class="review-card" data-reveal>
           <div class="review-copy">
-            <p class="eyebrow">03 / Review instinct</p>
-            <h2>I review the invariant, not just the diff.</h2>
+            <p class="eyebrow">03 / Review &amp; perspective</p>
+            <h2>Follow the behavior through the system.</h2>
             <p>
-              High-risk changes rarely fail only where the patch is loudest. I trace
-              the intended behavior through code, persistence, authorization,
-              execution boundaries, and regression coverage.
+              A patch is one part of the story. I follow what should happen through
+              code, stored state, permissions, and tests, then reproduce the failure
+              and check the smallest safe fix.
             </p>
-            <a class="text-link" href="static-cv.md">Read the ATS-friendly version <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="static-cv.md">Read the plain-text CV <span aria-hidden="true">→</span></a>
           </div>
           <ol class="trace-list">
             <li><span>01</span><div><strong>Reconstruct</strong><p>State the intended invariant and ownership boundary.</p></div></li>
             <li><span>02</span><div><strong>Trace</strong><p>Follow code, state, permissions, persistence, and tests.</p></div></li>
             <li><span>03</span><div><strong>Reproduce</strong><p>Separate the PR regression from an existing defect.</p></div></li>
-            <li><span>04</span><div><strong>Probe</strong><p>Test the smallest safe fix in an isolated lane.</p></div></li>
+            <li><span>04</span><div><strong>Probe</strong><p>Test the smallest safe fix in isolation.</p></div></li>
           </ol>
         </div>
 
         <div class="about-grid">
           <article class="about-card" data-reveal>
-            <p class="eyebrow">Beyond the headline</p>
-            <h3>The same builder, different surfaces.</h3>
+            <p class="eyebrow">Across the stack</p>
+            <h3>Different tools. The same care.</h3>
             <p>
-              A Debian host, a local speech-to-text tool, an ML experiment pipeline,
-              a native desktop app, and a Godot prototype all ask the same question:
-              can someone understand, operate, and continue this after the exciting
-              first pass?
+              Linux infrastructure, speech tools, ML pipelines, native apps, and
+              Godot games. In each, I care about the whole path from a working
+              experiment to something another person can run and continue.
             </p>
           </article>
           <article class="about-card lab-card" data-reveal>
             <p class="eyebrow">Lab bench</p>
-            <h3>Low-level curiosity, honestly scoped.</h3>
+            <h3>Curiosity down to the circuit.</h3>
             <p>
-              Digital logic, a working 4-bit CPU and custom assembly-like instruction
-              set in Turing Complete, plus IC10 automation. Useful proof of curiosity;
-              not presented as professional processor design.
+              On the lab bench: digital logic, a working 4-bit CPU with a custom
+              instruction set in Turing Complete, and IC10 automation. Independent
+              experiments in how machines work.
             </p>
           </article>
         </div>
@@ -467,10 +416,10 @@
       <section class="section contact-section" id="contact" data-reveal>
         <div>
           <p class="eyebrow">04 / Contact</p>
-          <h2>Bring a problem with edges.</h2>
+          <h2>Have something worth building?</h2>
           <p>
-            Systems engineering, maintainer tooling, security-sensitive application
-            work, applied AI, or an odd prototype that deserves to become real.
+            Get in touch about systems, security, applied AI, or a prototype
+            that needs a working path forward.
           </p>
         </div>
         <div class="contact-links">
@@ -485,7 +434,7 @@
 
     <footer class="site-footer">
       <p>Rares P · <span id="current-year">2026</span></p>
-      <p>Built without a framework. Coffee still required.</p>
+      <p>Built with care. Coffee still required.</p>
       <a href="#top">
         Back to top
         <svg class="top-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
@@ -503,12 +452,12 @@
         <button class="dialog-close" type="button" aria-label="Close quick navigation">Esc</button>
       </div>
       <div class="command-links">
-        <a href="#work"><span>01</span> Selected evidence <kbd>W</kbd></a>
+        <a href="#work"><span>01</span> Selected work <kbd>W</kbd></a>
         <a href="games.html"><span>↗</span> Game shelf <kbd>G</kbd></a>
-        <a href="#method"><span>02</span> Operating model <kbd>M</kbd></a>
-        <a href="#about"><span>03</span> Review instinct <kbd>A</kbd></a>
+        <a href="#method"><span>02</span> How I work <kbd>M</kbd></a>
+        <a href="#about"><span>03</span> Review &amp; perspective <kbd>A</kbd></a>
         <a href="#contact"><span>04</span> Contact <kbd>C</kbd></a>
-        <a href="cv.html"><span>↗</span> Static CV <kbd>V</kbd></a>
+        <a href="cv.html"><span>↗</span> CV <kbd>V</kbd></a>
       </div>
       <p class="command-hint">Tip: press <kbd>Ctrl</kbd> + <kbd>K</kbd> from anywhere.</p>
     </dialog>

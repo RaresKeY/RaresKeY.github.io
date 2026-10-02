@@ -34,8 +34,8 @@
             : "#f5f1e8";
       })();
     </script>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20261002-polish2">
+    <script src="script.js?v=20261002-polish2" defer></script>
   </head>
   <body class="games-page">
     <a class="skip-link" href="#games">Skip to the games</a>
@@ -52,13 +52,13 @@
     <main class="games-page-main" id="games">
       <section class="games-page-hero" data-reveal>
         <div>
-          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Games / A separate shelf</p>
+          <p class="eyebrow">Small Loop Works / Game shelf</p>
           <h1>Games.</h1>
           <p class="games-page-tagline">Small loops. Playable worlds.</p>
         </div>
         <p class="games-page-intro">
-          A compact shelf of games and prototypes from Small Loop Works. Select a
-          playable cover to launch it here, or follow a title to its itch.io page.
+          Games and experiments from Small Loop Works. Choose a cover to play here,
+          or follow its title to itch.io. Hover, focus, or tap a trophy to see the award.
         </p>
       </section>
 
@@ -83,16 +83,12 @@
           </article>
 
           <article class="game-card" data-reveal>
-            <a class="game-certificate" href="assets/certificates/micro-jam-064.webp" target="_blank" rel="noreferrer" aria-label="View White Approach's Micro Jam 064 first-place certificate, awarded to Small Loop Works">
-              <img src="assets/certificates/micro-jam-064.webp" width="1280" height="905" alt="Small Loop Works — Micro Jam 064 first-place achievement certificate, September 2026">
-              <span>1st overall · View certificate ↗</span>
-            </a>
             <div class="game-cover-shell">
               <button class="game-cover game-launch" type="button" data-game-title="White Approach" data-game-src="https://itch.io/embed-upload/19113756?color=3C3F45" data-game-width="960" data-game-height="622" data-game-page="https://smallloopworks.itch.io/white-approach" aria-label="Play White Approach here">
                 <img src="assets/games/white-approach.png" alt="White Approach cover art showing a little climber beside a red flag on a snowy mountain ledge">
                 <span class="game-cover-action"><span aria-hidden="true">▶</span> Play here</span>
               </button>
-              <a class="game-award-badge" href="assets/certificates/micro-jam-064.webp" target="_blank" rel="noreferrer" aria-label="View Micro Jam 064, where White Approach won first overall in the judges' choice" title="#1 overall — Micro Jam 064 judges' choice">
+              <a class="game-award-badge" data-award-image="assets/certificates/micro-jam-064.webp" data-award-title="White Approach / Micro Jam 064" data-award-caption="First place overall · Certificate awarded to Small Loop Works, September 2026" data-award-alt="Micro Jam 064 first-place certificate awarded to Small Loop Works" href="assets/certificates/micro-jam-064.webp" target="_blank" rel="noreferrer" aria-label="Preview White Approach’s first-place Micro Jam 064 certificate" title="#1 overall — Micro Jam 064 judges' choice">
                 <svg class="game-award-trophy" viewBox="0 0 160 160" aria-hidden="true" focusable="false">
                   <path class="trophy-handle" d="M51 39H29v9c0 21 12 34 31 35M109 39h22v9c0 21-12 34-31 35"></path>
                   <path class="trophy-cup" d="M47 28h66v26c0 27-14 46-33 46S47 81 47 54V28Z"></path>
@@ -148,7 +144,7 @@
                 <img src="assets/games/plug-prosper.png" alt="Plug &amp; Prosper cover art with a smiling plug and a colorful stack of adapters in a cheerful workshop">
                 <span class="game-cover-action"><span aria-hidden="true">▶</span> Play here</span>
               </button>
-              <a class="game-award-badge" href="https://itch.io/jam/ai-jam-4/results" target="_blank" rel="noreferrer" aria-label="View Plug &amp; Prosper's first-place AI Browser Game Jam 4 result on itch.io" title="View the first-place jam result">
+              <a class="game-award-badge" data-award-image="assets/certificates/plug-prosper-top-three.jpg" data-award-title="Plug &amp; Prosper / AI Browser Game Jam 4" data-award-caption="First overall · Top three itch.io results, captured 2 October 2026" data-award-alt="Actual itch.io Overall results showing Plug and Prosper first, AI2U second, and Technical Debt third" href="https://itch.io/jam/ai-jam-4/results" target="_blank" rel="noreferrer" aria-label="Preview Plug &amp; Prosper’s first-place AI Browser Game Jam 4 results" title="View the first-place jam result">
                 <svg class="game-award-trophy" viewBox="0 0 160 160" aria-hidden="true" focusable="false">
                   <path class="trophy-handle" d="M51 39H29v9c0 21 12 34 31 35M109 39h22v9c0 21-12 34-31 35"></path>
                   <path class="trophy-cup" d="M47 28h66v26c0 27-14 46-33 46S47 81 47 54V28Z"></path>
@@ -193,12 +189,11 @@
         <section class="itch-widget-trial" aria-labelledby="itch-widget-title" data-reveal>
           <div class="itch-widget-lead">
             <div>
-              <p class="eyebrow">On itch.io / Compact listings</p>
-              <h2 id="itch-widget-title">The compact listing view.</h2>
+              <p class="eyebrow">On itch.io</p>
+              <h2 id="itch-widget-title">Keep exploring.</h2>
               <p>
-                These are itch.io’s compact project widgets. They keep the itch
-                identity and project links visible, but do not launch games inside
-                the widgets.
+                Visit the project pages for downloads, development notes,
+                and more about each game.
               </p>
             </div>
             <iframe class="itch-project-widget" frameborder="0" src="https://itch.io/embed/4852636?bg_color=0B1F2C&amp;fg_color=E7F8F5&amp;link_color=57D6D1&amp;border_color=364250" width="552" height="167" loading="lazy" title="Horizon Charge itch.io project widget"><a href="https://smallloopworks.itch.io/horizon-charge">Horizon Charge by Small Loop Works</a></iframe>
@@ -223,6 +218,19 @@
         </div>
       </section>
     </main>
+
+    <div class="award-preview" id="award-preview" popover="auto" role="dialog" aria-labelledby="award-preview-title">
+      <div class="award-preview-header">
+        <h2 id="award-preview-title">Award</h2>
+        <button class="award-preview-close" type="button" aria-label="Close award preview">×</button>
+      </div>
+      <img class="award-preview-image" src="assets/certificates/micro-jam-064.webp" alt="">
+      <p class="award-preview-caption"></p>
+      <div class="award-preview-links">
+        <a class="award-preview-full" href="assets/certificates/micro-jam-064.webp" target="_blank" rel="noreferrer">View full-size image ↗</a>
+        <a class="award-preview-source" href="https://itch.io/jam/ai-jam-4/results" target="_blank" rel="noreferrer">View itch.io results ↗</a>
+      </div>
+    </div>
 
     <dialog class="game-player-dialog" aria-labelledby="game-player-title">
       <div class="game-player-shell">

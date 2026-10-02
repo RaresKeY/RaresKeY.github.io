@@ -126,20 +126,20 @@ const phases = {
   spike: {
     kicker: "question / 01",
     title: "What is actually unknown?",
-    copy: "Map the system and trust boundaries. Reproduce the risky behavior. Build the smallest probe that can disprove the convenient story.",
+    copy: "Map the system and trust boundaries. Reproduce the risky behavior. Build a small probe to test the assumption.",
     items: [
-      "System map before architecture theatre",
+      "Map the system and its boundaries",
       "One thin end-to-end path",
-      "Evidence captured beside the claim",
+      "Record what the experiment shows",
     ],
   },
   iterate: {
     kicker: "feedback / 02",
     title: "Does the whole loop close?",
-    copy: "Use the working path. Watch where it becomes awkward, slow, unsafe, or impossible to operate. Improve the bottleneck instead of polishing the fiction.",
+    copy: "Use the working path. Watch where it becomes awkward, slow, unsafe, or impossible to operate. Fix the bottleneck and test the path again.",
     items: [
-      "Dogfood the actual workflow",
-      "Keep feedback attached to behavior",
+      "Use the actual workflow",
+      "Turn feedback into a concrete change",
       "Separate product friction from structural risk",
     ],
   },
@@ -383,3 +383,94 @@ if (reduceMotion || !("IntersectionObserver" in window)) {
 
 const currentYear = document.querySelector("#current-year");
 if (currentYear) currentYear.textContent = String(new Date().getFullYear());
+
+// The award image stays in the top layer so previews never move the shelf.
+const awardPreview = document.querySelector(".award-preview");
+const awardBadges = [...document.querySelectorAll(".game-award-badge")];
+let activeAward = null;
+let awardCloseTimer;
+
+function hideAwardPreview() {
+  clearTimeout(awardCloseTimer);
+  if (awardPreview?.matches(":popover-open")) awardPreview.hidePopover();
+}
+
+function positionAwardPreview() {
+  if (!awardPreview || !activeAward || !awardPreview.matches(":popover-open")) return;
+  const anchor = activeAward.getBoundingClientRect();
+  const width = awardPreview.offsetWidth;
+  const height = awardPreview.offsetHeight;
+  const left = Math.max(12, Math.min(anchor.right - width, innerWidth - width - 12));
+  const below = anchor.bottom + 10;
+  const top = below + height <= innerHeight - 12
+    ? below
+    : Math.max(12, anchor.top - height - 10);
+  awardPreview.style.left = `${left}px`;
+  awardPreview.style.top = `${top}px`;
+}
+
+function showAwardPreview(badge) {
+  if (!awardPreview || typeof awardPreview.showPopover !== "function") return;
+  clearTimeout(awardCloseTimer);
+  if (activeAward) activeAward.setAttribute("aria-expanded", "false");
+  activeAward = badge;
+  const image = awardPreview.querySelector(".award-preview-image");
+  image.src = badge.dataset.awardImage;
+  image.alt = badge.dataset.awardAlt;
+  awardPreview.querySelector("#award-preview-title").textContent = badge.dataset.awardTitle;
+  awardPreview.querySelector(".award-preview-caption").textContent = badge.dataset.awardCaption;
+  awardPreview.querySelector(".award-preview-full").href = badge.dataset.awardImage;
+  const source = awardPreview.querySelector(".award-preview-source");
+  source.href = badge.href;
+  source.hidden = !badge.href.startsWith("https://itch.io/");
+  if (!awardPreview.matches(":popover-open")) awardPreview.showPopover();
+  badge.setAttribute("aria-expanded", "true");
+  positionAwardPreview();
+}
+
+function scheduleAwardClose() {
+  clearTimeout(awardCloseTimer);
+  awardCloseTimer = setTimeout(() => {
+    if (awardPreview?.matches(":hover") || activeAward?.matches(":hover") ||
+      awardPreview?.contains(document.activeElement) || document.activeElement === activeAward) return;
+    hideAwardPreview();
+  }, 180);
+}
+
+awardBadges.forEach((badge) => {
+  if (!awardPreview || typeof awardPreview.showPopover !== "function") return;
+  badge.setAttribute("aria-haspopup", "dialog");
+  badge.setAttribute("aria-controls", "award-preview");
+  badge.setAttribute("aria-expanded", "false");
+  badge.removeAttribute("title");
+  badge.addEventListener("pointerenter", (event) => {
+    if (event.pointerType !== "touch") showAwardPreview(badge);
+  });
+  badge.addEventListener("pointerleave", scheduleAwardClose);
+  badge.addEventListener("focus", () => showAwardPreview(badge));
+  badge.addEventListener("blur", scheduleAwardClose);
+  badge.addEventListener("click", (event) => {
+    event.preventDefault();
+    showAwardPreview(badge);
+    awardPreview.querySelector(".award-preview-close").focus({ preventScroll: true });
+  });
+});
+awardPreview?.addEventListener("pointerenter", () => clearTimeout(awardCloseTimer));
+awardPreview?.addEventListener("pointerleave", scheduleAwardClose);
+awardPreview?.addEventListener("focusout", scheduleAwardClose);
+awardPreview?.addEventListener("toggle", () => {
+  if (!awardPreview.matches(":popover-open")) {
+    activeAward?.setAttribute("aria-expanded", "false");
+    activeAward = null;
+  }
+});
+awardPreview?.querySelector(".award-preview-close").addEventListener("click", hideAwardPreview);
+awardPreview?.querySelector(".award-preview-image").addEventListener("load", positionAwardPreview);
+window.addEventListener("resize", hideAwardPreview);
+window.addEventListener("scroll", (event) => {
+  if (event.target === document && activeAward) {
+    const anchor = activeAward.getBoundingClientRect();
+    if (anchor.bottom < 0 || anchor.top > innerHeight) hideAwardPreview();
+    else positionAwardPreview();
+  }
+}, true);

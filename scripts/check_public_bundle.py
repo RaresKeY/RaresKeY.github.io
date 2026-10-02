@@ -45,6 +45,7 @@ EXPECTED_FILES = {
     "assets/social-preview.png",
     "assets/why-33-flag.png",
     "assets/certificates/micro-jam-064.webp",
+    "assets/certificates/plug-prosper-top-three.jpg",
     "cv.css",
     "cv.html",
     "games.html",
