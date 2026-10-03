@@ -2218,3 +2218,58 @@ kbd {
   .hero { padding-top: 3rem; }
   .hero-visual { min-height: 24rem; }
 }
+
+.certificate-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+  padding-block: 4rem;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.certificate-copy h2 {
+  margin: 0 0 1.25rem;
+  max-width: 17ch;
+  font-size: clamp(2rem, 3.8vw, 3.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+.certificate-copy p:not(.eyebrow) {
+  max-width: 45ch;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.certificate-image {
+  display: block;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.certificate-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line-strong);
+}
+
+.certificate-image > span {
+  display: block;
+  padding-block: 0.75rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+}
+
+.certificate-image:hover > span {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+@media (max-width: 720px) {
+  .certificate-showcase {
+    grid-template-columns: 1fr;
+    padding-block: 2.5rem;
+  }
+}
